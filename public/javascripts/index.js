@@ -1,4 +1,5 @@
 'use strict'
+// TODO run in phantomjs
 
 // The Navigation Timing API
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API
@@ -33,5 +34,6 @@ navEvents.forEach((e)=>{
 })
 
 for (let prop in perfData) {
+  //TODO post to backend, save to database and show it
   console.log(`${prop}: ${perfData[prop]}`)
 }
