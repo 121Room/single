@@ -1,4 +1,7 @@
 'use strict'
+
+let hello = require('./hello')
+
 // TODO run in phantomjs
 
 // The Navigation Timing API
@@ -37,3 +40,5 @@ for (let prop in perfData) {
   //TODO post to backend, save to database and show it
   console.log(`${prop}: ${perfData[prop]}`)
 }
+
+hello()
