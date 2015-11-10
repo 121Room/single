@@ -4,8 +4,3 @@ node_js:
 
 notifications:
   email: false
-  webhooks:
-    - https://jianliao.com/v2/services/webhook/11b0ca2a47dc80fcc134582e80cebc4ff990976e
-    on_success: never
-    on_failure: always
-    on_start: never
