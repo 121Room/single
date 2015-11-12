@@ -4,6 +4,7 @@
 const getTiming = require('timing_commonjs')
 const post = require('./post')
 const getLocation = require('./getLocation')
+const getNav = require('./nav')
 
 window.onload = () => {
   const ua = navigator.userAgent
@@ -16,4 +17,7 @@ window.onload = () => {
       clearInterval(timer)
     }
   }, 200)
+  const nav = getNav()
+
+  post({ua, timing, url, nav, location})
 }
