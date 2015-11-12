@@ -10,14 +10,15 @@ window.onload = () => {
   const ua = navigator.userAgent
   const timing = getTiming()
   const url = window.location.href
-  let location = getLocation()
-  let timer = setInterval(function () {
+  const nav = getNav()
+  const location = getLocation()
+  const timer = setInterval(function () {
     if (location.latitude) {
-      post({ua, timing, url, location})
+      post({ua, timing, url, location, nav})
+      clearInterval(timer)
+    } else if (location.error) {
+      post({ua, timing, url, nav})
       clearInterval(timer)
     }
   }, 200)
-  const nav = getNav()
-
-  post({ua, timing, url, nav, location})
 }

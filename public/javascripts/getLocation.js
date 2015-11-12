@@ -24,6 +24,7 @@ module.exports  = function () {
   }
 
   let error = function(err) {
+    location.error = err.code
     console.log('ERROR(' + err.code + '): ' + err.message)
   }
   navigator.geolocation.getCurrentPosition(success, error, options)
