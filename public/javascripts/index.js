@@ -4,8 +4,6 @@ let fib = require('fibonacci-perf')
 let timing = require('timing_commonjs')
 
 
-console.log(fib(1))
-
 window.onload = () => {
   let request = new XMLHttpRequest()
   request.open('POST', 'http://localhost:4567/report', true)
