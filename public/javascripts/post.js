@@ -1,5 +1,7 @@
 'use strict'
 
+// ajax post 的简单包装
+
 module.exports = (data) => {
   let request = new XMLHttpRequest()
   request.open('POST', 'http://localhost:4567/report', true)
