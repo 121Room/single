@@ -1,3 +1,5 @@
+// TODO use babel loader
+
 module.exports = {
     entry: "./public/javascripts/index.js",
     output: {
