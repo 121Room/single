@@ -3,7 +3,7 @@
  */
 'use strict'
 
-module.exports  = function (postion) {
+module.exports  = (postion) => {
   const crd = postion.coords
 
   const latitude = crd.latitude
