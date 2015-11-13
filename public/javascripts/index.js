@@ -10,11 +10,14 @@ window.onload = () => {
   const timing = getTiming()
   const url = window.location.href
   const nav = getNav()
+  const lang = navigator.language
+
+  let data = {ua, timing, url, nav, lang}
 
   navigator.geolocation.getCurrentPosition((postion) => {
     const ps = getPostion(postion)
-    post({ua, timing, url, nav, ps})
+    post(Object.assign(data, {ps}))
   }, () => {
-    post({ua, timing, url, nav})
+    post(data)
   })
 }
