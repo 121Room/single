@@ -11,8 +11,9 @@ window.onload = () => {
   const url = window.location.href
   const nav = getNav()
   const lang = navigator.language
+  const resolution = {width: screen.width, height: screen.height}
 
-  let data = {ua, timing, url, nav, lang}
+  let data = {ua, timing, url, nav, lang, resolution}
 
   navigator.geolocation.getCurrentPosition((postion) => {
     const ps = getPostion(postion)
