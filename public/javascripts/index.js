@@ -1,8 +1,8 @@
 'use strict'
 
-const getTiming = require('timing_commonjs')
+const getTiming = require('./timing')
 const post = require('./post')
-const getPostion = require('./getPostion')
+const getPosition = require('./position')
 const getNav = require('./nav')
 const getNetwork = require('./network')
 
@@ -18,7 +18,7 @@ window.onload = () => {
   let data = { ua, timing, url, nav, lang, resolution, network }
 
   navigator.geolocation.getCurrentPosition((postion) => {
-    const ps = getPostion(postion)
+    const ps = getPosition(postion)
     post(Object.assign(data, {ps}))
   }, () => {
     post(data)
