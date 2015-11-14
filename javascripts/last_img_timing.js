@@ -1,11 +1,11 @@
 'use strict'
 
-let resourceLoadTime = (r) => (r.responseEnd - r.startTime)
+const resourceLoadTime = (r) => (r.responseEnd - r.startTime)
 
 // 获取最后加载的一张图片的信息
 
 module.exports = (resourceTiming) => {
-  let imgTimingData = resourceTiming.filter((r) => {
+  const imgTimingData = resourceTiming.filter((r) => {
     return (r.initiatorType === 'img')
   })
 
@@ -14,7 +14,7 @@ module.exports = (resourceTiming) => {
   }
 
 
-  let lastImgTiming = imgTimingData.reduce((prev, current) => {
+  const lastImgTiming = imgTimingData.reduce((prev, current) => {
     if (resourceLoadTime(prev) < resourceLoadTime(current)) {
       return current
     } else {
