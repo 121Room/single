@@ -4,7 +4,7 @@ let resourceLoadTime = (r) => (r.responseEnd - r.startTime)
 
 // 获取最后加载的一张图片的信息
 
-exports.lastImgTiming = (resourceTiming) => {
+module.exports = (resourceTiming) => {
   let imgTimingData = resourceTiming.filter((r) => {
     return (r.initiatorType === 'img')
   })
