@@ -8,6 +8,6 @@ run
 
 * `npm install`
 * `webpack --watch`
-* `DEBUG=single:* npm start`
+* `npm start`
 
 open <http://localhost:3000/>
