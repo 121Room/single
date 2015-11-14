@@ -17,7 +17,14 @@ window.onload = () => {
   const resolution = {width: screen.width, height: screen.height}
   const network = getNetwork()
   const resourceTiming = performance.getEntriesByType('resource')
-  const lastImgTimingData = getResourceTimingData(getLastImgTiming(resourceTiming))
+
+  const lastImgTiming = getLastImgTiming(resourceTiming)
+
+  let lastImgTimingData
+  if (lastImgTiming !== undefined) {
+    lastImgTimingData = getResourceTimingData(lastImgTiming)
+  }
+
 
   let data = { ua, timing, url, nav, lang, resolution, network, lastImgTimingData }
 

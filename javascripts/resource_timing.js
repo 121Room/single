@@ -8,7 +8,6 @@ module.exports = function(resourceTiming) {
   let api = Object.create(null)
 
   for (let k in resourceTiming) {
-    console.log(k)
     if (k !== 'toJSON') {
       api[k] = resourceTiming[k]
     }
