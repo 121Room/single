@@ -17,5 +17,20 @@ module.exports = function() {
     }
   }
 
+  if (api.firstPaint === undefined) {
+    var firstPaint = 0
+
+     // Chrome
+    if (window.chrome && window.chrome.loadTimes) {
+      // Convert to ms
+      firstPaint = window.chrome.loadTimes().firstPaintTime * 1000
+      api.firstPaintTime = firstPaint - (window.chrome.loadTimes().startLoadTime*1000)
+    } else if (typeof window.performance.timing.msFirstPaint === 'number') {
+        // IE
+      firstPaint = window.performance.timing.msFirstPaint
+      api.firstPaintTime = firstPaint - window.performance.timing.navigationStart
+    }
+  }
+
   return api
 }
