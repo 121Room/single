@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "npm test && http-server --i=false -o -p 3000",
+    "start": "npm test && http-server -c1 -o -p 3000",
     "test": "gulp lint && webpack"
   },
   "dependencies": {},
