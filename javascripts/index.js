@@ -17,9 +17,9 @@ window.onload = () => {
   const resolution = {width: screen.width, height: screen.height}
   const network = getNetwork()
   const resourceTiming = performance.getEntriesByType('resource')
-  const lastImgTiming = getResourceTimingData(getLastImgTiming(resourceTiming))
+  const lastImgTimingData = getResourceTimingData(getLastImgTiming(resourceTiming))
 
-  let data = { ua, timing, url, nav, lang, resolution, network, lastImgTiming }
+  let data = { ua, timing, url, nav, lang, resolution, network, lastImgTimingData }
 
   navigator.geolocation.getCurrentPosition((postion) => {
     const ps = getPosition(postion)
