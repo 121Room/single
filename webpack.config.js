@@ -1,9 +1,9 @@
 // TODO use babel loader
 
 module.exports = {
-    entry: "./public/javascripts/index.js",
+    entry: "./javascripts/index.js",
     output: {
-        path: "./public/dist",
+        path: "./dist",
         filename: "bundle.js"
     },
     module: {
