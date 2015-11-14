@@ -6,12 +6,12 @@
     "start": "npm test && http-server --i=false -o -p 3000",
     "test": "gulp lint && webpack"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "chai": "^3.4.0",
     "gulp": "^3.9.0",
     "gulp-eslint": "^1.0.0",
+    "http-server": "^0.8.5",
     "mocha": "^2.3.3",
     "webpack": "^1.12.2"
   }
