@@ -13,7 +13,5 @@ module.exports = function(resourceTiming) {
     }
   }
 
-  api.loadTime = api.responseEnd - api.startTime
-
   return api
 }
