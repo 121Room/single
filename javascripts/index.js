@@ -5,7 +5,8 @@ const post = require('./post')
 const getPosition = require('./position')
 const getNav = require('./nav')
 const getNetwork = require('./network')
-const getLastImgTiming = require('./resource_timing').lastImgTiming
+const getResourceTimingData = require('./resource_timing')
+const getLastImgTiming = require('./last_img_timing').lastImgTiming
 
 window.onload = () => {
   const ua = navigator.userAgent
@@ -16,7 +17,7 @@ window.onload = () => {
   const resolution = {width: screen.width, height: screen.height}
   const network = getNetwork()
   const resourceTiming = performance.getEntriesByType('resource')
-  const lastImgTiming = getLastImgTiming(resourceTiming)
+  const lastImgTiming = getResourceTimingData(getLastImgTiming(resourceTiming))
 
   console.log(lastImgTiming)
   let data = { ua, timing, url, nav, lang, resolution, network, lastImgTiming }
