@@ -6,6 +6,11 @@ const getPosition = require('./position')
 const getNav = require('./nav')
 const getNetwork = require('./network')
 const getLastImgTiming = require('./resource_timing/last_img_timing')
+const getAjaxTiming = require('./resource_timing/ajax_timing.js')
+
+document.addEventListener('DOMContentLoaded', (event) => {
+  post({hello: 'world!'})
+})
 
 window.onload = () => {
   const ua = navigator.userAgent
@@ -18,8 +23,9 @@ window.onload = () => {
   const resourceTiming = performance.getEntriesByType('resource')
 
   const lastImgTiming = getLastImgTiming(resourceTiming)
+  const ajaxTiming = getAjaxTiming(resourceTiming)
 
-  let data = { ua, timing, url, nav, lang, resolution, network, lastImgTiming }
+  let data = { ua, timing, url, nav, lang, resolution, network, lastImgTiming, ajaxTiming }
 
   navigator.geolocation.getCurrentPosition((postion) => {
     const ps = getPosition(postion)
