@@ -1,6 +1,7 @@
 'use strict'
 
 const resourceLoadTime = require('./resource_load_time')
+const getResourceTimingData = require('./resource_timing')
 
 // 获取最后加载的一张图片的信息
 
@@ -17,5 +18,5 @@ module.exports = (resourceTiming) => {
     }
   })
 
-  return lastImgTiming
+  return getResourceTimingData(lastImgTiming)
 }

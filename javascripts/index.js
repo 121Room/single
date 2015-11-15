@@ -5,7 +5,6 @@ const post = require('./post')
 const getPosition = require('./position')
 const getNav = require('./nav')
 const getNetwork = require('./network')
-const getResourceTimingData = require('./resource_timing/resource_timing')
 const getLastImgTiming = require('./resource_timing/last_img_timing')
 
 window.onload = () => {
@@ -20,13 +19,7 @@ window.onload = () => {
 
   const lastImgTiming = getLastImgTiming(resourceTiming)
 
-  let lastImgTimingData
-  if (lastImgTiming !== undefined) {
-    lastImgTimingData = getResourceTimingData(lastImgTiming)
-  }
-
-
-  let data = { ua, timing, url, nav, lang, resolution, network, lastImgTimingData }
+  let data = { ua, timing, url, nav, lang, resolution, network, lastImgTiming }
 
   navigator.geolocation.getCurrentPosition((postion) => {
     const ps = getPosition(postion)
