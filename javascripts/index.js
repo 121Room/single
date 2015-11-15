@@ -5,8 +5,8 @@ const post = require('./post')
 const getPosition = require('./position')
 const getNav = require('./nav')
 const getNetwork = require('./network')
-const getResourceTimingData = require('./resource_timing')
-const getLastImgTiming = require('./last_img_timing')
+const getResourceTimingData = require('./resource_timing/resource_timing')
+const getLastImgTiming = require('./resource_timing/last_img_timing')
 
 window.onload = () => {
   const ua = navigator.userAgent
