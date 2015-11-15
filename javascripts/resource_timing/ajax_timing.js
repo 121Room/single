@@ -1,6 +1,7 @@
 'use strict'
 
 // 获取 ajax 的性能信息
+// TODO 这个只能获取 window.onload 之前的
 
 const getResourceTimingData = require('./resource_timing')
 
