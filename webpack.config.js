@@ -4,7 +4,7 @@ module.exports = {
     entry: "./javascripts/index.js",
     output: {
         path: "./dist",
-        filename: "bundle.js"
+        filename: "report.js"
     },
     module: {
         loaders: [
