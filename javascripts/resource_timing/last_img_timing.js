@@ -1,6 +1,6 @@
 'use strict'
 
-const resourceLoadTime = (r) => (r.responseEnd - r.startTime)
+const resourceLoadTime = require('./resource_load_time')
 
 // 获取最后加载的一张图片的信息
 
