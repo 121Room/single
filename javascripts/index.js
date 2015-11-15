@@ -8,7 +8,7 @@ const getNetwork = require('./network')
 const getLastImgTiming = require('./resource_timing/last_img_timing')
 const getAjaxTiming = require('./resource_timing/ajax_timing.js')
 
-document.addEventListener('DOMContentLoaded', (event) => {
+document.addEventListener('DOMContentLoaded', () => {
   post({hello: 'world!'})
 })
 
