@@ -16,6 +16,7 @@ window.onload = () => {
   const ua = navigator.userAgent
   const timing = getTiming()
   const url = window.location.href
+  const ref = document.referrer
   const nav = getNav()
   const lang = navigator.language
   const resolution = {width: screen.width, height: screen.height}
@@ -25,7 +26,8 @@ window.onload = () => {
   const lastImgTiming = getLastImgTiming(resourceTiming)
   const ajaxTiming = getAjaxTiming(resourceTiming)
 
-  let data = { ua, timing, url, nav, lang, resolution, network, lastImgTiming, ajaxTiming }
+  let data = { ua, timing, url, nav, lang, resolution, network,
+    lastImgTiming, ajaxTiming, ref}
 
   navigator.geolocation.getCurrentPosition((postion) => {
     const ps = getPosition(postion)
