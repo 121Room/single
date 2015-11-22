@@ -1,5 +1,3 @@
-'use strict'
-
 const getTiming = require('./timing')
 const post = require('./post')
 const getPosition = require('./position')

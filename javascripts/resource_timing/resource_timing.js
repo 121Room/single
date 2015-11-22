@@ -1,5 +1,3 @@
-'use strict'
-
 // 提取 Resource Timing API 里有用的东西
 // http://www.w3.org/TR/resource-timing
 

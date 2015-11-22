@@ -1,5 +1,3 @@
-'use strict'
-
 // Navigation Timing API
 // https://developer.mozilla.org/en-US/docs/Web/API/Navigation_timing_API
 

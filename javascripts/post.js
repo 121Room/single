@@ -1,5 +1,3 @@
-'use strict'
-
 // ajax post 的简单包装
 
 module.exports = (data) => {

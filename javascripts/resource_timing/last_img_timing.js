@@ -1,5 +1,3 @@
-'use strict'
-
 const resourceLoadTime = require('./resource_load_time')
 const getResourceTimingData = require('./resource_timing')
 
