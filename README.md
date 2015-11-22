@@ -7,5 +7,5 @@
 run
 
 * `npm install`
-* `webpack --watch`
+* `webpack -pw`
 * `npm start`
