@@ -26,33 +26,33 @@ module.exports = (resourceTiming) => {
   //2,计算出基线dom元素之上的所有图片元素
   //3,所有图片onload之后为首屏显示时间
   //
-  function getOffsetTop(ele) {
-    var offsetTop = ele.offsetTop;
-    if (ele.offsetParent !== null) {
-      offsetTop += getOffsetTop(ele.offsetParent);
-    }
-    return offsetTop;
-  }
+  // function getOffsetTop(ele) {
+  //   var offsetTop = ele.offsetTop;
+  //   if (ele.offsetParent !== null) {
+  //     offsetTop += getOffsetTop(ele.offsetParent);
+  //   }
+  //   return offsetTop;
+  // }
 
-  var firstScreenHeight = window.screen.height;
-  var firstScreenImgs = [];
-  var isFindLastImg = false;
-  var allImgLoaded = false;
-  var imgs = [];
-  var img;
-  
-  imgs = document.body.querySelector('img');
-  for (var i = 0; i < imgs.length; i++) {
-    img = imgs[i];
-    var imgOffsetTop = getOffsetTop(img);
-    if (imgOffsetTop > firstScreenHeight) {
-      continue;
-    } else if (imgOffsetTop <= firstScreenHeight && !img.hasPushed) {
-      img.hasPushed = 1;
-      firstScreenImgs.push(img);
-    }
-  }
-  
+  // var firstScreenHeight = window.screen.height;
+  // var firstScreenImgs = [];
+  // var isFindLastImg = false;
+  // var allImgLoaded = false;
+  // var imgs = [];
+  // var img;
+
+  // imgs = document.body.querySelector('img');
+  // for (var i = 0; i < imgs.length; i++) {
+  //   img = imgs[i];
+  //   var imgOffsetTop = getOffsetTop(img);
+  //   if (imgOffsetTop > firstScreenHeight) {
+  //     continue;
+  //   } else if (imgOffsetTop <= firstScreenHeight && !img.hasPushed) {
+  //     img.hasPushed = 1;
+  //     firstScreenImgs.push(img);
+  //   }
+  // }
+
   // var t = setInterval(function() {
   //   var i, img;
   //   if (isFindLastImg) {
@@ -90,4 +90,3 @@ module.exports = (resourceTiming) => {
   //     }
   //   }
   // }, 10);
-  
